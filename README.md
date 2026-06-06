@@ -4,7 +4,7 @@
 
 A **cosmic One Piece-themed** personal portfolio built with pure HTML, CSS, and JavaScript. No frameworks, no build tools, just clean code.
 
-🌐 **Live Site:** [jahnvithakur13.github.io/portfolio](https://jahnvithakur13.github.io/portfolio)
+🌐 **Live Site:** https://jahnvithakur13.github.io/My_Portfolio/
 
 ---
 
