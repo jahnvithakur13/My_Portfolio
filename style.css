@@ -358,9 +358,6 @@ h1 .line3 {
 }
 .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
 
-/* ============================================================
-   HERO PHOTO — Desktop: absolute positioned to the right
-   ============================================================ */
 .hero-photo {
     position: absolute;
     right: -10%; top: 52%;
@@ -562,9 +559,6 @@ footer strong { color: var(--accent2); font-weight: 500; }
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
 
-/* ============================================================
-   TABLET (≤ 900px) — shrink photo, keep it absolute
-   ============================================================ */
 @media (max-width: 900px) {
     .about-highlights { grid-template-columns: 1fr 1fr; }
     .hero-photo {
@@ -575,10 +569,6 @@ footer strong { color: var(--accent2); font-weight: 500; }
     }
 }
 
-/* ============================================================
-   MOBILE (≤ 640px) — photo flows in the normal document order,
-   sitting between .hero-ctas and .hero-stats
-   ============================================================ */
 @media (max-width: 640px) {
     nav { padding: 0.75rem 1rem; }
     .hero, section { padding-left: 1.25rem; padding-right: 1.25rem; }
@@ -596,8 +586,6 @@ footer strong { color: var(--accent2); font-weight: 500; }
     .hero-desc { font-size: 0.95rem; }
     .op-quote { font-size: 0.7rem; }
 
-    /* ✅ KEY FIX: Switch from absolute to relative so the photo
-       flows naturally between .hero-ctas and .hero-stats        */
     .hero-photo {
         position: relative;
         right: auto;
@@ -611,8 +599,6 @@ footer strong { color: var(--accent2); font-weight: 500; }
         box-shadow: 0 0 12px #d4af37, 0 0 30px rgba(212,175,55,0.4);
         display: block;
     }
-
-    /* Give the stats a top margin since the photo now sits above them */
     .hero-stats {
         margin-top: 1.75rem;
     }
