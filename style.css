@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
 :root {
     --bg:      #000005;
     --bg2:     #04030f;
@@ -87,11 +88,7 @@ body::after {
     transform: translate(-50%, -50%);
     width: 900px; height: 900px;
     border-radius: 50%;
-    background: radial-gradient(ellipse,
-        rgba(201,168,76,0.05) 0%,
-        rgba(123,104,238,0.04) 40%,
-        transparent 70%
-    );
+    background: radial-gradient(ellipse, rgba(201,168,76,0.05) 0%, rgba(123,104,238,0.04) 40%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     animation: aura-pulse 8s ease-in-out infinite;
@@ -105,13 +102,7 @@ body::after {
 .op-scanlines {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.04) 2px,
-        rgba(0,0,0,0.04) 4px
-    );
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
     pointer-events: none;
     z-index: 1;
 }
@@ -164,32 +155,56 @@ nav, .hero, section, footer, .wave-divider, .footer-wave {
 nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.1rem 2.5rem;
-    background: rgba(0,0,5,0.80);
+    padding: 0.85rem 1.25rem;
+    background: rgba(0,0,5,0.90);
     backdrop-filter: blur(18px);
     border-bottom: 0.5px solid rgba(201,168,76,0.2);
     box-shadow: 0 1px 30px rgba(100,60,200,0.15);
+    flex-wrap: nowrap;
+    gap: 0.5rem;
 }
+
 .nav-logo {
-    font-family: 'Cinzel Decorative', serif;
-    font-weight: 700; font-size: 1.1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 1rem;
     color: var(--accent2);
     text-decoration: none;
     letter-spacing: 0.05em;
-    display: flex; align-items: center; gap: 8px;
-    text-shadow: 0 0 10px rgba(232,200,74,0.4);
+    display: flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
+
 .logo-hat { font-size: 1rem; }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
+
+.nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+}
+
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links li { flex-shrink: 0; }
+
 .nav-links a {
     color: var(--muted); text-decoration: none;
-    font-size: 0.875rem; font-weight: 400;
-    letter-spacing: 0.02em; transition: color 0.2s;
+    font-size: 0.78rem; font-weight: 400;
+    letter-spacing: 0.01em; transition: color 0.2s;
     position: relative;
+    padding: 0.25rem 0.65rem;
+    display: block;
+    white-space: nowrap;
 }
+
 .nav-links a::after {
     content: '';
-    position: absolute; bottom: -4px; left: 0; right: 0;
+    position: absolute; bottom: -2px; left: 0.65rem; right: 0.65rem;
     height: 1px; background: var(--accent);
     transform: scaleX(0); transition: transform 0.2s;
 }
@@ -220,6 +235,7 @@ nav {
     border-radius: 50%; background: var(--green);
     animation: blink 2s infinite;
 }
+
 @keyframes blink {
     0%,100% { opacity:1; box-shadow: 0 0 6px var(--green); }
     50%      { opacity:0.3; box-shadow: none; }
@@ -545,20 +561,40 @@ footer strong { color: var(--accent2); font-weight: 500; }
 
 @media (max-width: 900px) {
     .about-highlights { grid-template-columns: 1fr 1fr; }
-    .hero-photo { width: 280px; height: 280px; right: -5%; }
+    .hero-photo {
+        width: 220px; height: 220px;
+        right: 0; top: 42%;
+        opacity: 0.35;
+        border-width: 3px;
+    }
 }
 
 @media (max-width: 640px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { gap: 1rem; font-size: 0.75rem; }
+    nav { padding: 0.75rem 1rem; }
     .hero, section { padding-left: 1.25rem; padding-right: 1.25rem; }
     .about-highlights, .contact-grid { grid-template-columns: 1fr; }
     .project-card { grid-template-columns: 1fr; }
-    .hero-stats { gap: 1.5rem; }
+    .hero-stats { gap: 1.25rem; }
     .exp-header { flex-direction: column; }
-    .op-hat { width: 70px; }
-    .op-ship { width: 120px; }
-    .hero-photo { display: none; }
-    .name-jahnvi { font-size: clamp(2.2rem, 10vw, 3.5rem); }
-    .name-singh  { font-size: clamp(1.8rem, 8vw, 3rem); }
+    .op-hat { width: 60px; top: 8vh; right: 2vw; }
+    .op-ship { width: 100px; }
+    .op-compass { width: 35px; }
+    .op-jolly-roger { width: 45px; }
+    .hero-photo {
+        position: absolute;
+        right: 1rem;
+        top: 7rem;
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+        opacity: 0.5;
+        transform: none;
+        box-shadow: 0 0 12px #d4af37, 0 0 24px rgba(212,175,55,0.4);
+        display: block;
+    }
+    .name-jahnvi { font-size: clamp(2.8rem, 11vw, 4rem); }
+    .name-singh  { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+    .hero-desc { font-size: 0.95rem; }
+    .op-quote { font-size: 0.7rem; }
+    .certs-grid { grid-template-columns: 1fr; }
 }
