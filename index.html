@@ -76,12 +76,10 @@
 </nav>
 
 <div class="hero">
+  <!-- ✅ FIX: hero-photo removed from inside hero-tag -->
   <div class="hero-tag">
     <span class="blink-dot"></span>
     Available for opportunities
-    <div class="hero-photo">
-      <img src="jahnvi.jpeg" alt="Jahnvi Singh">
-    </div>
   </div>
 
   <h1>
@@ -102,7 +100,11 @@
     <a href="#projects" class="btn btn-primary">Set Sail ↓</a>
     <a href="https://drive.google.com/drive/folders/1r4IZlgQIul2NS8bGR7YOqIra2B_1Nk4e?usp=drive_link" class="btn btn-outline">Resume</a>
   </div>
-  
+
+  <!-- ✅ FIX: hero-photo is now a direct child of .hero, placed between .hero-ctas and .hero-stats -->
+  <div class="hero-photo">
+    <img src="jahnvi.jpeg" alt="Jahnvi Singh">
+  </div>
 
   <div class="hero-stats">
     <div class="stat-item">
