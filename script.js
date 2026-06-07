@@ -78,12 +78,10 @@
       s.alpha += s.twinkleSpeed * s.twinkleDir;
       if (s.alpha >= 1)   { s.alpha = 1;   s.twinkleDir = -1; }
       if (s.alpha <= 0.1) { s.alpha = 0.1; s.twinkleDir =  1; }
-
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = s.color + s.alpha + ')';
       ctx.fill();
-
       if (s.r > 1.2) {
         ctx.strokeStyle = s.color + (s.alpha * 0.35) + ')';
         ctx.lineWidth = 0.5;
@@ -117,7 +115,7 @@
   function loop() {
     drawStars();
     frame++;
-    if (frame % 140 === 0) spawnShootingStar(); // shooting star every ~2.3s
+    if (frame % 140 === 0) spawnShootingStar();
     requestAnimationFrame(loop);
   }
 
