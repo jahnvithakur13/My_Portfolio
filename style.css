@@ -603,8 +603,8 @@ footer strong { color: var(--accent2); font-weight: 500; }
         right: auto;
         top: auto;
         transform: none;
-        width: 160px;
-        height: 160px;
+        width: 220px;
+        height: 220px;
         border-width: 2px;
         opacity: 1;
         margin: 1.75rem auto 0;
