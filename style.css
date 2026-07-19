@@ -487,23 +487,26 @@ h2 {
 }
 
 /* Ongoing / Coming Soon highlight for in-progress projects */
-.project-card.ongoing {
-    border-color: rgba(232,200,74,0.4);
-    background: rgba(232,200,74,0.035);
-    box-shadow: 0 0 0 1px rgba(232,200,74,0.15), 0 0 30px rgba(232,200,74,0.12);
-    animation: ongoing-pulse 3s ease-in-out infinite;
-}
-.project-card.ongoing::before {
-    opacity: 1;
-    background: linear-gradient(90deg, var(--accent2), var(--accent3), var(--accent2));
-}
-.project-card.ongoing:hover {
-    box-shadow: 0 0 0 1px rgba(232,200,74,0.3), 0 0 45px rgba(232,200,74,0.2);
+@property --border-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
 }
 
-@keyframes ongoing-pulse {
-    0%, 100% { box-shadow: 0 0 0 1px rgba(232,200,74,0.15), 0 0 30px rgba(232,200,74,0.12); }
-    50%      { box-shadow: 0 0 0 1px rgba(232,200,74,0.3), 0 0 45px rgba(232,200,74,0.22); }
+.project-card.ongoing {
+    border: 2px solid transparent;
+    background:
+        linear-gradient(rgba(9,8,20,0.92), rgba(9,8,20,0.92)) padding-box,
+        conic-gradient(from var(--border-angle), var(--accent2), var(--accent3), var(--blue), var(--accent2)) border-box;
+    animation: rotate-border 4s linear infinite;
+    box-shadow: 0 0 30px rgba(232,200,74,0.15);
+}
+.project-card.ongoing:hover {
+    box-shadow: 0 0 45px rgba(232,200,74,0.28);
+}
+
+@keyframes rotate-border {
+    to { --border-angle: 360deg; }
 }
 
 .coming-soon-badge {
