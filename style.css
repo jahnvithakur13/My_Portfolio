@@ -486,30 +486,24 @@ h2 {
     color: var(--accent2);
 }
 
-.project-desc-list { list-style: none; margin-bottom: 1rem; }
-.project-desc-list li {
-    font-size: 0.875rem; color: var(--muted);
-    padding: 5px 0 5px 1.4rem; position: relative; line-height: 1.75;
-}
-.project-desc-list li::before { content: '⚓'; position: absolute; left: 0; font-size: 0.7rem; top: 7px; opacity: 0.6; }
-
 /* Ongoing / Coming Soon highlight for in-progress projects */
 .project-card.ongoing {
-    background: rgba(232,200,74,0.04);
-    border: 2px solid transparent;
-    background-image:
-        linear-gradient(rgba(9,8,20,0.95), rgba(9,8,20,0.95)),
-        conic-gradient(var(--accent2), var(--accent3), var(--blue), var(--accent2));
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    animation: ongoing-hue 4s linear infinite;
+    border-color: rgba(232,200,74,0.4);
+    background: rgba(232,200,74,0.035);
+    box-shadow: 0 0 0 1px rgba(232,200,74,0.15), 0 0 30px rgba(232,200,74,0.12);
+    animation: ongoing-pulse 3s ease-in-out infinite;
+}
+.project-card.ongoing::before {
+    opacity: 1;
+    background: linear-gradient(90deg, var(--accent2), var(--accent3), var(--accent2));
 }
 .project-card.ongoing:hover {
-    box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 30px rgba(232,200,74,0.2);
+    box-shadow: 0 0 0 1px rgba(232,200,74,0.3), 0 0 45px rgba(232,200,74,0.2);
 }
 
-@keyframes ongoing-hue {
-    to { filter: hue-rotate(360deg); }
+@keyframes ongoing-pulse {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(232,200,74,0.15), 0 0 30px rgba(232,200,74,0.12); }
+    50%      { box-shadow: 0 0 0 1px rgba(232,200,74,0.3), 0 0 45px rgba(232,200,74,0.22); }
 }
 
 .coming-soon-badge {
@@ -594,6 +588,12 @@ h2 {
     border-color: rgba(201,168,76,0.3);
     box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 18px rgba(201,168,76,0.1);
     transform: translateY(-3px);
+}
+.achieve-item:hover { border-color: rgba(201,168,76,0.3); box-shadow: 0 0 18px rgba(201,168,76,0.07); }
+.achieve-bullet {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent2); margin-top: 8px; flex-shrink: 0;
+    box-shadow: 0 0 8px var(--accent);
 }
 .achieve-text { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
 .achieve-text strong { color: var(--text); }
