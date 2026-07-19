@@ -486,10 +486,31 @@ h2 {
     color: var(--accent2);
 }
 
+.project-desc-list {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+.project-desc-list li {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.75;
+    padding: 3px 0 3px 1.2rem;
+    position: relative;
+}
+.project-desc-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--accent3);
+    font-size: 0.8rem;
+}
+
 /* Ongoing / Coming Soon highlight for in-progress projects */
 .project-card.ongoing {
     position: relative;
     border: none;
+    overflow: visible;
     z-index: 0;
     box-shadow: 0 0 30px rgba(232,200,74,0.15);
 }
