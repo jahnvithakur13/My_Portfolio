@@ -469,11 +469,82 @@ h2 {
 .project-link-icon { color: var(--muted); font-size: 1.2rem; align-self: start; transition: color 0.2s; }
 .project-card:hover .project-link-icon { color: var(--accent2); }
 
+.project-links-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.85rem;
+}
+.project-links-row .project-link-icon {
+    font-size: 0.8rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--accent3);
+    text-decoration: none;
+    align-self: auto;
+    transition: color 0.2s;
+}
+.project-links-row .project-link-icon:hover {
+    color: var(--accent2);
+}
+
+/* Ongoing / Coming Soon highlight for in-progress projects */
+.project-card.ongoing {
+    border-color: rgba(232,200,74,0.4);
+    background: rgba(232,200,74,0.035);
+    box-shadow: 0 0 0 1px rgba(232,200,74,0.15), 0 0 30px rgba(232,200,74,0.12);
+    animation: ongoing-pulse 3s ease-in-out infinite;
+}
+.project-card.ongoing::before {
+    opacity: 1;
+    background: linear-gradient(90deg, var(--accent2), var(--accent3), var(--accent2));
+}
+.project-card.ongoing:hover {
+    box-shadow: 0 0 0 1px rgba(232,200,74,0.3), 0 0 45px rgba(232,200,74,0.2);
+}
+
+@keyframes ongoing-pulse {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(232,200,74,0.15), 0 0 30px rgba(232,200,74,0.12); }
+    50%      { box-shadow: 0 0 0 1px rgba(232,200,74,0.3), 0 0 45px rgba(232,200,74,0.22); }
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    background: rgba(232,200,74,0.1);
+    border: 0.5px solid rgba(232,200,74,0.35);
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+.coming-soon-badge .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent2);
+    animation: blink 2s infinite;
+}
+
 .exp-block {
     background: rgba(255,255,255,0.035);
     border: 0.5px solid var(--border);
     border-radius: var(--r);
-    padding: 1.75rem; backdrop-filter: blur(8px);
+    padding: 1.75rem;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+.exp-block + .exp-block {
+    margin-top: 1.5rem;
+}
+.exp-block:hover {
+    border-color: rgba(201,168,76,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 20px rgba(201,168,76,0.08);
 }
 .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
 .exp-role { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; color: var(--text); }
