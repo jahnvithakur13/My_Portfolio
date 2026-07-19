@@ -584,11 +584,10 @@ h2 {
     border-radius: var(--r);
     padding: 1.25rem 1.5rem; transition: all 0.25s; backdrop-filter: blur(8px);
 }
-.achieve-item:hover { border-color: rgba(201,168,76,0.3); box-shadow: 0 0 18px rgba(201,168,76,0.07); }
-.achieve-bullet {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent2); margin-top: 8px; flex-shrink: 0;
-    box-shadow: 0 0 8px var(--accent);
+.achieve-item:hover {
+    border-color: rgba(201,168,76,0.3);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 18px rgba(201,168,76,0.1);
+    transform: translateY(-3px);
 }
 .achieve-text { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
 .achieve-text strong { color: var(--text); }
