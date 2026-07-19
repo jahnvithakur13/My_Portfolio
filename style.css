@@ -487,26 +487,37 @@ h2 {
 }
 
 /* Ongoing / Coming Soon highlight for in-progress projects */
-@property --border-angle {
-    syntax: '<angle>';
-    inherits: false;
-    initial-value: 0deg;
-}
-
 .project-card.ongoing {
-    border: 2px solid transparent;
-    background:
-        linear-gradient(rgba(9,8,20,0.92), rgba(9,8,20,0.92)) padding-box,
-        conic-gradient(from var(--border-angle), var(--accent2), var(--accent3), var(--blue), var(--accent2)) border-box;
-    animation: rotate-border 4s linear infinite;
+    position: relative;
+    border: none;
+    z-index: 0;
     box-shadow: 0 0 30px rgba(232,200,74,0.15);
 }
 .project-card.ongoing:hover {
     box-shadow: 0 0 45px rgba(232,200,74,0.28);
 }
+.project-card.ongoing::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: inherit;
+    background: conic-gradient(var(--accent2), var(--accent3), var(--blue), var(--accent2));
+    opacity: 1;
+    animation: spin-border 3s linear infinite;
+    z-index: -1;
+}
+.project-card.ongoing::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(9,8,20,0.95);
+    border-radius: inherit;
+    opacity: 1;
+    z-index: -1;
+}
 
-@keyframes rotate-border {
-    to { --border-angle: 360deg; }
+@keyframes spin-border {
+    to { transform: rotate(360deg); }
 }
 
 .coming-soon-badge {
@@ -525,6 +536,7 @@ h2 {
     border: 0.5px solid rgba(232,200,74,0.35);
     padding: 4px 12px;
     border-radius: 100px;
+    z-index: 1;
 }
 .coming-soon-badge .dot {
     width: 6px; height: 6px;
