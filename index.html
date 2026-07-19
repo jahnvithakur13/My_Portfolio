@@ -174,7 +174,7 @@
     <div class="highlight-card">
       <div class="highlight-icon">🗄️</div>
       <div class="highlight-title">Databases</div>
-      <div class="highlight-desc">MongoDB, MySQL</div>
+      <div class="highlight-desc">MongoDB, MySQL, PostgreSQL</div>
     </div>
     <div class="highlight-card">
       <div class="highlight-icon">🛠️</div>
@@ -203,6 +203,23 @@
 <section id="experience" class="fade-in">
   <div class="section-tag"></div>
   <h2>Experience</h2>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <div>
+        <div class="exp-role">Full Stack Developer Intern</div>
+        <div class="exp-company">TalAstra HR Consultants Pvt. Ltd. (Hybrid, Gurugram, Haryana)</div>
+      </div>
+      <div class="exp-date">June 2026 – Present</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Develop and maintain a production-grade Human Resource Management System (HRMS) using React, React Native, Node.js, Express.js, PostgreSQL, and Sequelize ORM, contributing to scalable full-stack application development.</li>
+      <li>Build and enhance core HRMS modules including Employee Management, Attendance, Leave Management, Onboarding, Helpdesk Ticketing, and Payroll support to streamline HR operations.</li>
+      <li>Design and integrate RESTful APIs, implement CRUD operations, optimize PostgreSQL database interactions, and ensure secure authentication and authorization across the application.</li>
+      <li>Collaborate with cross-functional teams using Git/GitHub and Agile development practices to build, test, debug, and optimize features while participating in code reviews and delivering production-ready solutions.</li>
+    </ul>
+  </div>
+
   <div class="exp-block">
     <div class="exp-header">
       <div>
@@ -225,12 +242,41 @@
   <h2>Projects</h2>
   <div class="projects-grid">
 
-    <a href="https://github.com/jahnvithakur13/Sentiment_Analysis_" target="_blank" class="project-card">
+    <div class="project-card" style="cursor: default;">
       <div>
-        <div class="project-title">Sentiment Analysis of Comments</div>
+        <div class="project-title">DiagnoSense — AI-Powered Multi-Modal Healthcare Diagnostic Assistant</div>
         <div class="project-desc">
-          Flask web app classifying citizen comments as positive, negative, or neutral with 85%+ accuracy.
-          Supports multilingual language detection including regional Indian languages for diverse text processing.
+          Full-stack clinical decision-support platform fusing medical images, lab reports, and patient history into a
+          unified disease-prediction pipeline, with a FastAPI backend and role-based (patient/doctor) web interface.
+          Features an explainability layer using Grad-CAM and SHAP to expose AI reasoning to doctors, a fairness-auditing
+          dashboard with Fairlearn and AIF360, an NMC-based doctor verification system, and a doctor-to-doctor case
+          referral workflow with full context handoff. Team of 3.
+        </div>
+        <div class="project-stats">
+          <span class="project-stat">Ongoing</span>
+          <span class="project-stat">Team of 3</span>
+        </div>
+        <div class="project-tags-row">
+          <span class="project-tech">Python</span>
+          <span class="project-tech">FastAPI</span>
+          <span class="project-tech">HTML/CSS/JS</span>
+          <span class="project-tech">PostgreSQL</span>
+          <span class="project-tech">Grad-CAM</span>
+          <span class="project-tech">SHAP</span>
+          <span class="project-tech">Fairlearn</span>
+          <span class="project-tech">AIF360</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-title">SentiVerse — Smart Sentiment Analysis Web App</div>
+        <div class="project-desc">
+          Flask-based web application classifying citizen comments as positive, negative, or neutral with 85%+ accuracy
+          using NLP techniques and machine learning models. Implements multilingual language detection, text
+          preprocessing, and sentiment analysis pipelines to support diverse regional language inputs, with backend REST
+          APIs integrated with an interactive frontend for real-time sentiment visualization. Deployed on Render.
         </div>
         <div class="project-stats">
           <span class="project-stat">85%+ accuracy</span>
@@ -240,49 +286,63 @@
           <span class="project-tech">Python</span>
           <span class="project-tech">Flask</span>
           <span class="project-tech">NLP</span>
-          <span class="project-tech">HTML/CSS</span>
+          <span class="project-tech">HTML/CSS/JS</span>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/jahnvithakur13/sentiment_analysis" target="_blank" class="project-link-icon">GitHub ↗</a>
+          <a href="https://sentiment-analysis-73an.onrender.com/" target="_blank" class="project-link-icon">Live ↗</a>
         </div>
       </div>
-      <div class="project-link-icon">↗</div>
-    </a>
+    </div>
 
-    <a href="https://github.com/jahnvithakur13/student-ai-chatbot" target="_blank" class="project-card">
+    <div class="project-card">
       <div>
-        <div class="project-title">Student AI Chatbot</div>
+        <div class="project-title">Intellexa — AI Study Assistant Chatbot</div>
         <div class="project-desc">
-          AI-powered academic chatbot built with Python and Streamlit, integrating the Groq API for LLM-based responses.
-          Features multi-turn conversation support and a modular architecture supporting 10+ academic subject modules.
+          AI-powered study assistant chatbot built with Python, Streamlit, and Groq's Llama 3.3 API to provide guidance
+          on education, careers, and industry trends. Implements multi-modal interaction through text, image, PDF,
+          DOCX, and TXT inputs, enabling context-aware responses and document-based assistance. Custom dark-themed UI
+          with chat history, recent conversations, and quick notes, deployed on Streamlit Community Cloud with secure
+          API key management.
         </div>
         <div class="project-stats">
-          <span class="project-stat">60% faster query resolution</span>
-          <span class="project-stat">Sub-second response</span>
+          <span class="project-stat">Multi-modal input</span>
+          <span class="project-stat">Groq Llama 3.3</span>
         </div>
         <div class="project-tags-row">
+          <span class="project-tech">Python</span>
           <span class="project-tech">Streamlit</span>
           <span class="project-tech">Groq API</span>
-          <span class="project-tech">Python</span>
           <span class="project-tech">LLM</span>
         </div>
+        <div class="project-links-row">
+          <a href="https://github.com/jahnvithakur13/Intellexa" target="_blank" class="project-link-icon">GitHub ↗</a>
+          <a href="https://jahnvithakur13-intellexa-app-gll6io.streamlit.app/" target="_blank" class="project-link-icon">Live ↗</a>
+        </div>
       </div>
-      <div class="project-link-icon">↗</div>
-    </a>
+    </div>
 
-    <a href="https://github.com/jahnvithakur13/wafsim_pro" target="_blank" class="project-card">
+    <a href="https://github.com/jahnvithakur13/mern-web" target="_blank" class="project-card">
       <div>
-        <div class="project-title">WAFSimPro — AI-Powered WAF Simulator</div>
+        <div class="project-title">E-Commerce Platform using MERN Stack</div>
         <div class="project-desc">
-          Modular Python Web Application Firewall simulator detecting SQLi, XSS, and path traversal attacks with real-time
-          traffic replay. Implements SHA-256 chained forensic logging for audit trail integrity across all sessions.
+          Scalable e-commerce platform built using the MERN stack with modular architecture, Redux state management,
+          and a responsive React UI built with reusable components. Implements secure authentication and authorization
+          using JWT, bcrypt password hashing, protected routes, Axios interceptors, and role-based access control for
+          users and orders. Engineered RESTful APIs for products, cart, checkout, order history, and order management;
+          validated the complete flow from registration and login to checkout and order tracking.
         </div>
         <div class="project-stats">
-          <span class="project-stat">Real-time detection</span>
-          <span class="project-stat">SHA-256 forensics</span>
+          <span class="project-stat">JWT auth</span>
+          <span class="project-stat">Role-based access</span>
         </div>
         <div class="project-tags-row">
-          <span class="project-tech">Python</span>
-          <span class="project-tech">Tkinter</span>
-          <span class="project-tech">PyInstaller</span>
-          <span class="project-tech">AI Rule Engine</span>
+          <span class="project-tech">MongoDB</span>
+          <span class="project-tech">Express.js</span>
+          <span class="project-tech">React.js</span>
+          <span class="project-tech">Node.js</span>
+          <span class="project-tech">Redux</span>
+          <span class="project-tech">JWT</span>
         </div>
       </div>
       <div class="project-link-icon">↗</div>
@@ -384,11 +444,11 @@
       </div>
     </a>
 
-    <a href="tel:+919305587280" class="contact-card">
-      <div class="contact-icon"><i class="fas fa-phone"></i></div>
+    <a href="https://www.instagram.com/thefreakyengineer/?hl=en" target="_blank" class="contact-card">
+      <div class="contact-icon"><i class="fab fa-instagram"></i></div>
       <div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-val">+91 93055 87280</div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-val">@thefreakyengineer</div>
       </div>
     </a>
 
