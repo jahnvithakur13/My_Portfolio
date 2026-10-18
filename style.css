@@ -678,4 +678,19 @@ footer strong { color: var(--accent2); font-weight: 500; }
     .hero-stats {
         margin-top: 1.75rem;
     }
+
+    .exp-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.exp-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 4px;
+  flex-shrink: 0;
+}
 }
