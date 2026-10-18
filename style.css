@@ -674,23 +674,25 @@ footer strong { color: var(--accent2); font-weight: 500; }
         margin: 1.75rem auto 0;
         box-shadow: 0 0 12px #d4af37, 0 0 30px rgba(212,175,55,0.4);
         display: block;
-    }
+ }
     .hero-stats {
         margin-top: 1.75rem;
     }
+}
 
-    .exp-title-wrap {
+.exp-right {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
+
 .exp-logo {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   background: #fff;
   border-radius: 10px;
   padding: 4px;
-  flex-shrink: 0;
-}
+  box-shadow: 0 0 12px rgba(232, 200, 74, 0.25);
 }
